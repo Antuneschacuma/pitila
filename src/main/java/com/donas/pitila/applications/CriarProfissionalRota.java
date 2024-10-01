@@ -5,23 +5,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.donas.pitila.adapters.Dtos.CreateClientRequest;
-import com.donas.pitila.adapters.controllers.CriarClienteController;
-import com.donas.pitila.core.entities.Cliente;
+import com.donas.pitila.adapters.Dtos.CreateProfissionalRequest;
+import com.donas.pitila.adapters.controllers.CriarProfissionalController;
+import com.donas.pitila.core.entities.Profissional;
 
 import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/clientes")
-public class CriarClienteRota {
+@RequestMapping("/api/v1/profissionais")
+public class CriarProfissionalRota {
 
-    private CriarClienteController clienteController;
+    private CriarProfissionalController profissionalController;
 
     @PostMapping
-    public Cliente create(@RequestBody CreateClientRequest createClientRequest) {
+    public Profissional create(@RequestBody CreateProfissionalRequest createProfissionalRequest) {
         try {
-            return this.clienteController.criar(createClientRequest);
+            return this.profissionalController.criar(createProfissionalRequest);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e.getMessage());
