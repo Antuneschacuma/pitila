@@ -1,7 +1,6 @@
 package com.donas.pitila.core.entities;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -43,5 +42,5 @@ public class Servico {
     private Profissional profissional;
 
     @OneToMany(mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Agendamento> agendamentos = new ArrayList<>();
+    private List<Agendamento> agendamentos;
 }

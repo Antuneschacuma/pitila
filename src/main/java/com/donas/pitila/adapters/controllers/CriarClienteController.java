@@ -21,6 +21,5 @@ public class CriarClienteController {
                 createClientRequest.telefone(),
                 createClientRequest.latitude(),
                 createClientRequest.longitude());
-
     }
 }

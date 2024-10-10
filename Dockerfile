@@ -1,11 +1,14 @@
-# Imagem base do JDK 21
+# Use uma imagem base do OpenJDK
 FROM openjdk:21-jdk-slim
 
-# Definir o diretório de trabalho dentro do contêiner
+# Defina o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiar o arquivo JAR gerado para dentro do contêiner
+# Copie o arquivo JAR gerado pela aplicação (ajuste o nome conforme necessário)
 COPY target/pitila-0.0.1-SNAPSHOT.jar /app/pitila.jar
 
-# Comando para rodar a aplicação
+# Exponha a porta que o Spring Boot irá rodar (geralmente 8080 ou conforme seu `application.properties`)
+EXPOSE 8080
+
+# Comando para rodar o JAR
 ENTRYPOINT ["java", "-jar", "/app/pitila.jar"]

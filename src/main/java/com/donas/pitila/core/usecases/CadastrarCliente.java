@@ -1,8 +1,10 @@
 package com.donas.pitila.core.usecases;
 
+import java.time.LocalDate;
+
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import com.donas.pitila.core.entities.Cliente;
 import com.donas.pitila.core.entities.Localizacao;
@@ -28,7 +30,7 @@ public class CadastrarCliente implements CadastrarClientePort {
                 .localizacao(localizacao)
                 .dataCriacao(LocalDate.now())
                 .build();
-
+        cliente.validate();
         return clienteRepository.save(cliente);
     }
 }

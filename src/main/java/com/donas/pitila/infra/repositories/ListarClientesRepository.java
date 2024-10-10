@@ -4,7 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.donas.pitila.core.entities.Cliente;
+import com.donas.pitila.core.ports.out.ListarClientesRepositoryPort;
 
 @Repository
-public interface ClienteRepository1 extends JpaRepository<Cliente, Long> {
+public interface ListarClientesRepository extends JpaRepository<Cliente, Long>, ListarClientesRepositoryPort {
+
 }
